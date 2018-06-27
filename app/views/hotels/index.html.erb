@@ -1,0 +1,11 @@
+<h1>All Hotels</h1>
+<%= will_paginate %>
+<ul class="hotels">
+  <% @hotels.each do |hotel| %>
+    <li>
+      <%= link_to hotel.name, hotel %>
+      <%= hotel.address %>
+    </li>
+  <% end %>
+</ul>
+<%= will_paginate %>
