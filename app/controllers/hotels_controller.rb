@@ -6,15 +6,14 @@ class HotelsController < ApplicationController
 
   def show
     @hotel=Hotel.find(params[:id])
+    view=HotelView.new(user_id: current_user.id , hotel_id: @hotel.id)
+    view.save
+    @count=HotelView.where(hotel_id: @hotel.id).count
   end
 
-  private
-  # Confirms a logged-in user.
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = "Please log in."
-      redirect_to login_url
-    end
-  end
+
+
+
+
+
 end
