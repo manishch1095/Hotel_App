@@ -10,15 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180627045423) do
+ActiveRecord::Schema.define(version: 20180627050021) do
 
   create_table "carts", force: :cascade do |t|
     t.integer "hotel_id"
     t.integer "user_id"
+    t.boolean "is_current", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["hotel_id"], name: "index_carts_on_hotel_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
+  end
+
+  create_table "hotel_views", force: :cascade do |t|
+    t.integer "hotel_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hotel_id"], name: "index_hotel_views_on_hotel_id"
+    t.index ["user_id"], name: "index_hotel_views_on_user_id"
   end
 
   create_table "hotels", force: :cascade do |t|
