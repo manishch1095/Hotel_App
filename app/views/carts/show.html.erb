@@ -7,9 +7,11 @@
     <section class="user_info">
       <h3>
         <% @hotels.each do |hotel| %>
-        <li> <%= hotel.name %></li>
+        <li> <%= hotel.name %> <%= link_to "Remove", cart_path, method: :delete,
+                                      data: { confirm: "You sure?" } %></li>
         <% end %>
       </h3>
+      <%= link_to "Checkout", '' , class: "btn btn-lg btn-primary" %>
     </section>
   </aside>
 </div>

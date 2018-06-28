@@ -7,8 +7,7 @@
  </span></h2>
 <aside class="col-md-4"
 <div>
-<%= link_to "Add to cart", hotel_add_to_cart_path(@hotel.id) , method: :post ,class: "btn btn-lg btn-primary"  %>
-<%= link_to "Checkout", '#' , class: "btn btn-lg btn-primary" %>
+<%= link_to "Add to cart", hotel_add_to_cart_path(hotel_id: @hotel.id) , method: :post ,class: "btn btn-lg btn-primary"  %>
 </div>
 </aside>
 

@@ -17,8 +17,10 @@ Rails.application.routes.draw do
 
     resources :carts
 
+
     resources :hotels do
       post 'add_to_cart', to: "hotels#add_to_cart"
+
     end
 
 end
