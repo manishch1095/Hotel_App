@@ -11,6 +11,14 @@ Rails.application.routes.draw do
     get    '/login',   to: 'sessions#new'
     post   '/login',   to: 'sessions#create'
     delete '/logout',  to: 'sessions#destroy'
-    resources :users
-    resources :hotels
+    resources :users do
+      get 'cart', to: 'carts#show'
+    end
+
+    resources :carts
+
+    resources :hotels do
+      post 'add_to_cart', to: "hotels#add_to_cart"
+    end
+
 end

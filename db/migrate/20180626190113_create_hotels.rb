@@ -4,6 +4,7 @@ class CreateHotels < ActiveRecord::Migration[5.1]
       t.text :name
       t.text :address
 
+
       t.timestamps
     end
   end

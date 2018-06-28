@@ -4,7 +4,10 @@
   <% @hotels.each do |hotel| %>
     <li>
       <%= link_to hotel.name, hotel %>
-      <%= hotel.address %>
+      |Address-<%= hotel.address %>
+    |Price-<%= hotel.price %>
+      |Rating-<%= hotel.rating %>
+
     </li>
   <% end %>
 </ul>

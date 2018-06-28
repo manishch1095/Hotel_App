@@ -24,6 +24,10 @@ end
 99.times do |n|
   name  = Faker::Name.name
   address = Faker::Address.full_address
+  price = rand(1000..5000)
+  rating = rand(1..5)
   Hotel.create!(name:  name,
-               address: address)
+               address: address,
+                price: price,
+                rating: rating)
 end
