@@ -13,7 +13,7 @@ class HotelsController < ApplicationController
 
   def add_to_cart
     @hotel=Hotel.find(params[:hotel_id])
-    cart=Cart.new(user_id: current_user.id , hotel_id: params[:hotel_id])
+    cart=Cart.new(user_id: current_user.id , hotel_id: params[:hotel_id] ,is_current: true)
     cart.save
     redirect_to cart_path(cart)
   end
